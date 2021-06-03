@@ -9,29 +9,11 @@ import { Card } from "react-bootstrap";
 import MyBadge from "./MyBadge";
 import { Component } from "react";
 
-// const SingleBook = ({ book }) => {
-//   return (
-//     <div>
-//       <Card>
-//         <Card.Img variant="top" src={book.img} style={{height: '300px'}} />
-//         <MyBadge text={book.price} color='warning' />
-//         <Card.Body>
-//           <Card.Title>{book.title}</Card.Title>
-//           <Card.Text>
-//             {book.category}
-//           </Card.Text>
-//         </Card.Body>
-//       </Card>
-//     </div>
-//   );
-// };
-
-// export default SingleBook;
-
 class SingleBook extends Component {
   state = {
-    selected: false
+    selected: false,
   };
+
   render() {
     const mystyle = {
       position: "absolute",
@@ -39,11 +21,11 @@ class SingleBook extends Component {
       right: "0",
     };
     return (
-      // <div>
-        <Card 
-          className='h-100'
-          onClick={() => this.setState({selected: !this.state.selected})}
-          style={{transform: this.state.selected ? 'scale(0.8)' : 'none'}}
+      <>
+        <Card
+          className="h-100"
+          onClick={() => this.setState({ selected: !this.state.selected })}
+          style={{ transform: this.state.selected ? "scale(0.8)" : "none" }}
         >
           <Card.Img
             className="w-100"
@@ -61,7 +43,7 @@ class SingleBook extends Component {
             <Card.Text>{this.props.book.category}</Card.Text>
           </Card.Body>
         </Card>
-      // </div>
+      </>
     );
   }
 }
