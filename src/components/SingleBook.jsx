@@ -8,12 +8,17 @@
 import { Card } from "react-bootstrap";
 import MyBadge from "./MyBadge";
 import { Component } from "react";
+import Comments from "./Comments";
 
 class SingleBook extends Component {
   state = {
     selected: false,
+    apiKey: "",
   };
 
+  componentDidMount = () => {
+    // console.log(this.props.apiKey);
+  };
   render() {
     const mystyle = {
       position: "absolute",
@@ -24,7 +29,7 @@ class SingleBook extends Component {
       <>
         <Card
           className="h-100"
-          onClick={() => this.setState({ selected: !this.state.selected })}
+          onClick={() => this.setState({ selected: true })}
           style={{ transform: this.state.selected ? "scale(0.8)" : "none" }}
         >
           <Card.Img
@@ -41,6 +46,9 @@ class SingleBook extends Component {
           <Card.Body>
             <Card.Title>{this.props.book.title}</Card.Title>
             <Card.Text>{this.props.book.category}</Card.Text>
+            {this.state.selected && (
+              <Comments book={this.props.book} apiKey={this.props.apiKey} />
+            )}
           </Card.Body>
         </Card>
       </>
