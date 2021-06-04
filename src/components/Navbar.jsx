@@ -1,34 +1,43 @@
-import { Nav, Navbar, Container } from "react-bootstrap";
-// removed NavDropDown, since it was never used
+import { IoSearchSharp } from "react-icons/io5";
+import { Nav, Navbar, Container, Dropdown } from "react-bootstrap";
+import "../App.css";
 const NavBar = () => {
   return (
     <>
-      <Navbar bg="dark" expand="lg">
+      <Navbar expand="lg" id="navbar">
         <Container fluid>
           <Navbar.Brand href="#home">
             <img src="../assets/logo.png" alt="logo" />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto">
+            <Nav className="me-auto" id="navbar">
               <Nav.Link href="#home">Home</Nav.Link>
               <Nav.Link href="#link">TV Shows</Nav.Link>
               <Nav.Link href="#link">Movies</Nav.Link>
               <Nav.Link href="#link">Recently Added</Nav.Link>
             </Nav>
-            <div
-              className="ml-auto d-flex align-items-center dropdown-menu userDropdown"
-              aria-labelledby="navbarDropdownMenuLink"
-            >
-              <img src="./assets/kids_icon.png" alt="kidslogo" />
+            <div className="ml-auto d-flex align-items-center ">
+              <IoSearchSharp />
+              <a href="#kids">Kids</a>
+              <Dropdown>
+                <Dropdown.Toggle
+                  id="dropdown-button-dark-example1"
+                  variant="secondary"
+                >
+                  <img src="../assets/kids_icon.png" alt="img" />
+                </Dropdown.Toggle>
 
-              <link className="dropdown-item" href="#">
-                {/* Kids <img class="kidsIcon" src="kids_icon.png" alt="kidsIcon" /> */}
-              </link>
-              <link className="addUser " href="profile.html">
-                {/* {" "}
-                Add User */}
-              </link>
+                <Dropdown.Menu variant="dark">
+                  <Dropdown.Item href="#" active>
+                    Add User
+                  </Dropdown.Item>
+                  <Dropdown.Item href="#">Kids</Dropdown.Item>
+
+                  <Dropdown.Divider />
+                  <Dropdown.Item href="#">Log out</Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
             </div>
           </Navbar.Collapse>
         </Container>
