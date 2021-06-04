@@ -1,14 +1,16 @@
 import { FaSearch } from "react-icons/fa";
 import {BsBellFill} from "react-icons/bs";
 import { Nav, Navbar, Container, Dropdown } from "react-bootstrap";
+import logo from '../assets/logo.png'
+import icon from '../assets/kids_icon.png'
 import "../App.css";
 const NavBar = () => {
   return (
     <>
-      <Navbar expand="lg" id="navbar">
+      <Navbar expand="lg" id="navbar" className=''>
         <Container fluid>
           <Navbar.Brand href="#home">
-            <img src="./logo.png" alt="logo" id="navbar1" />
+            <img src={logo} alt="logo" id="navbar1"  className='logo'/>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
@@ -22,15 +24,16 @@ const NavBar = () => {
               <FaSearch />
               <a id="navbar1" href="#kids" className='mx-2'>Kids </a>
               <BsBellFill/>
-              <Dropdown>
+              <Dropdown >
                 <Dropdown.Toggle
                   id="dropdown-button-dark-example1"
                   variant="secondary"
+                  className='dropdown'
                 >
-                  <img src="../assets/kids_icon.png" alt="img" />
+                  <img src={icon} alt="img" className='icon'/>
                 </Dropdown.Toggle>
 
-                <Dropdown.Menu variant="dark">
+                <Dropdown.Menu variant="light">
                   <Dropdown.Item href="#" active>
                     Add User
                   </Dropdown.Item>
