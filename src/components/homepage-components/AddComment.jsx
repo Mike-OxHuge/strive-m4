@@ -11,7 +11,6 @@ class AddComment extends Component {
   };
   inputChange = (e) => {
     let id = e.target.id;
-    console.log(id + e.target.value);
     this.setState({
       comment: {
         ...this.state.comment,
@@ -22,9 +21,6 @@ class AddComment extends Component {
 
   submitComment = async (e) => {
     e.preventDefault();
-    // console.log(this.state.comment);
-    // console.log(this.props.apiKey);
-    // console.log(this.props.asin);
     let response = await fetch(
       `https://striveschool-api.herokuapp.com/api/comments/`,
       {
@@ -42,13 +38,11 @@ class AddComment extends Component {
         comment: {
           comment: "",
           rate: null,
-          elementId: this.props.asin,
+          elementId: this.props.id,
         },
       });
       window.location.reload();
     } else {
-      // this is going to catch a server problem
-      // i.e: server is down, db has a problem
       alert("Perhaps you forgot to type something");
     }
   };
@@ -63,7 +57,6 @@ class AddComment extends Component {
             placeholder="Enter comment"
             id="comment"
             value={this.state.comment.comment}
-            // with value I'm reflecting into the input what I have into the state
             onChange={(e) => this.inputChange(e)}
           />
         </Form.Group>

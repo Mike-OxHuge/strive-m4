@@ -1,5 +1,6 @@
 import { Component } from "react";
 import AddComment from "./AddComment";
+import DeleteComment from "./DeleteComment";
 
 class Comments extends Component {
   state = {
@@ -43,6 +44,7 @@ class Comments extends Component {
           this.state.comments.map((comment) => (
             <div key={comment._id}>
               <span>{comment.comment}</span>
+              <DeleteComment apiKey={this.state.apiKey} id={comment._id} />
             </div>
           ))
         )}
