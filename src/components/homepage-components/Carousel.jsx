@@ -23,7 +23,7 @@ class Carousel extends Component {
         <Container className="d-flex">
           <Row>
             {this.state.movies.map((movie) => (
-              <EachMovie movie={movie} />
+              <EachMovie movie={movie} key={movie.imdbID} />
             ))}
           </Row>
         </Container>
