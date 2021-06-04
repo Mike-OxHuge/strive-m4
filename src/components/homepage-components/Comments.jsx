@@ -43,7 +43,9 @@ class Comments extends Component {
         ) : (
           this.state.comments.map((comment) => (
             <div key={comment._id}>
-              <span>{comment.comment}</span>
+              <span>
+                {comment.comment} by {comment.author}
+              </span>
               <DeleteComment apiKey={this.state.apiKey} id={comment._id} />
             </div>
           ))
