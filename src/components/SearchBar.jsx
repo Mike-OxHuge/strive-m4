@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { Form, Card } from "react-bootstrap";
+import { Form } from "react-bootstrap";
 class SearchBar extends Component {
   state = {
     searchQuery: "",
@@ -38,7 +38,7 @@ class SearchBar extends Component {
           />
         </Form.Group>
 
-        <Card style={{ width: "18rem" }}>
+        {/* <Card style={{ width: "18rem" }}>
           <Card.Img variant="top" src="holder.js/100px180" />
           <Card.Body>
             <Card.Title>Card Title</Card.Title>
@@ -47,7 +47,7 @@ class SearchBar extends Component {
               bulk of the card's content.
             </Card.Text>
           </Card.Body>
-        </Card>
+        </Card> */}
       </div>
     );
   }
