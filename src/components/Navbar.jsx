@@ -26,7 +26,7 @@ const NavBar = () => {
               <BsBellFill/>
               <Dropdown >
                 <Dropdown.Toggle
-                    menuAlign="right"
+                    
                     title="Dropdown right"
                     id="dropdown-menu-align-right"
                   className='dropdown'
