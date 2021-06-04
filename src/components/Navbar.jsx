@@ -23,11 +23,11 @@ const NavBar = () => {
               <img src="./assets/kids_icon.png" alt="kidslogo" />
 
               <link className="dropdown-item" href="#">
-                Kids <img class="kidsIcon" src="kids_icon.png" alt="kidsIcon" />
+                {/* Kids <img class="kidsIcon" src="kids_icon.png" alt="kidsIcon" /> */}
               </link>
               <link className="addUser " href="profile.html">
-                {" "}
-                Add User
+                {/* {" "}
+                Add User */}
               </link>
             </div>
           </Navbar.Collapse>
