@@ -1,8 +1,8 @@
 import { Component } from "react";
+import AddComment from "./AddComment";
 
 class Comments extends Component {
   state = {
-    id: this.props.id,
     comments: [],
     apiKey: "",
   };
@@ -46,6 +46,7 @@ class Comments extends Component {
             </div>
           ))
         )}
+        <AddComment apiKey={this.state.apiKey} id={this.props.id} />
       </>
     );
   }
