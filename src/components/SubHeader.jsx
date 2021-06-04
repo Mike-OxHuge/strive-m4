@@ -16,23 +16,16 @@ class SubHeader extends Component {
     ],
     CurrentGenre: "Genres",
   };
-
-  // componentDidMount = async () => {
-  //   let response = await fetch(
-  //     `https://www.omdbapi.com/?apikey=2bc5c486&s=${this.state.CurrentGenre}`
-  //   );
-  //   let genres = await response.json();
-  // };
   componentDidUpdate = async () => {
     console.log("Fetching data...");
     let response = await fetch(
       `https://www.omdbapi.com/?apikey=2bc5c486&s=${this.state.CurrentGenre}`
     );
-    let genres = await response.json();
+    let movies = await response.json();
     console.log(
       `The search result for a query of ${this.state.CurrentGenre} are:`
     );
-    console.log(genres.Search);
+    console.log(movies.Search);
   };
   selecting = async (e) => {
     this.setState({
@@ -51,19 +44,11 @@ class SubHeader extends Component {
                 title={this.state.CurrentGenre}
                 variant="dark"
               >
-                {this.state.genres.map(
-                  (genre) => (
-                    <Dropdown.Item
-                      key={genre}
-                      onClick={(e) => this.selecting(e)}
-                    >
-                      {genre}
-                    </Dropdown.Item>
-                  )
-                  // this..setState({
-                  //   CurrentGenre: `${genre}`
-                  // })
-                )}
+                {this.state.genres.map((genre) => (
+                  <Dropdown.Item key={genre} onClick={(e) => this.selecting(e)}>
+                    {genre}
+                  </Dropdown.Item>
+                ))}
               </DropdownButton>
             </Col>
             <Col className="col-4">
