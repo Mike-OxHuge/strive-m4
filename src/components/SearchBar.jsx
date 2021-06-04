@@ -15,9 +15,9 @@ class SearchBar extends Component {
     console.log(
       `The search result for a query of ${this.state.searchQuery} are:`
     );
-    this.setState({
-      movies: movies.Search,
-    });
+    // this.setState({
+    //   movies: movies.Search,
+    // });
     console.log(movies.Search);
   };
 
