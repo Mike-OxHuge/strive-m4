@@ -1,4 +1,4 @@
-import { Component } from "react";
+
 import {Nav,Navbar,Container,NavDropdown} from 'react-bootstrap'
 const NavBar =()=>  {
   
@@ -18,16 +18,15 @@ const NavBar =()=>  {
         <Nav.Link href="#link">Recently Added</Nav.Link>
        
       </Nav> 
-      <div className='ml-auto'>
+      <div className='ml-auto d-flex align-items-center dropdown-menu userDropdown' aria-labelledby="navbarDropdownMenuLink">
           
-        
-        <NavDropdown  title="Dropdown" id="basic-nav-dropdown">
-          <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-          <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-          <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-          <NavDropdown.Divider />
-          <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-        </NavDropdown>
+        <img src="./assets/kids_icon.png" alt="kidslogo" />
+       
+                <link className="dropdown-item" href="#">
+                  Kids   <img class="kidsIcon" src="kids_icon.png" alt="kidsIcon">
+                </link>
+                <link className="addUser "href="profile.html"> Add User</link>
+              
          </div>
     </Navbar.Collapse>
   </Container>
