@@ -3,7 +3,7 @@ import {BsBellFill} from "react-icons/bs";
 import { Nav, Navbar, Container, Dropdown } from "react-bootstrap";
 import logo from '../assets/logo.png'
 import icon from '../assets/kids_icon.png'
-import "../App.css";
+import "../assets/navbar.css";
 const NavBar = () => {
   return (
     <>
@@ -33,7 +33,7 @@ const NavBar = () => {
                   <img src={icon} alt="img" className='icon'/>
                 </Dropdown.Toggle>
 
-                <Dropdown.Menu variant="light">
+                <Dropdown.Menu variant="" className='smallMenu'>
                   <Dropdown.Item href="#" active>
                     Add User
                   </Dropdown.Item>

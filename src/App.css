@@ -106,22 +106,4 @@ body {
 
 }
 
-#navbar{
- 
-  background-color: black;
-  color: white;
-}
-#navbar1{
-color: white;  
-}
-.logo{
-  width: 100px;
-}
-.icon{
-  width: 30px;
-  
-}
-.dropdown{
-  background-color: black;
-  border: none;
-}
+
