@@ -1,4 +1,5 @@
 import { Component } from "react";
+import Comments from "./Comments";
 class Carousel extends Component {
   state = {
     movies: [],
@@ -19,6 +20,7 @@ class Carousel extends Component {
         {this.state.movies.map((movie) => (
           <div key={movie.imdbID}>
             <span>{movie.Title}</span>
+            <Comments id={movie.imdbID} />
           </div>
         ))}
       </>
@@ -27,3 +29,11 @@ class Carousel extends Component {
 }
 
 export default Carousel;
+
+// an example of object.Search
+// {
+//      "Title":"Harry Potter and the Deathly Hallows: Part 2",
+//      "Year":"2011","imdbID":"tt1201607",
+//      "Type":"movie",
+//      "Poster":"https://m.media-amazon.com/images/M/MV5BMGVmMWNiMDktYjQ0Mi00MWIxLTk0N2UtN2ZlYTdkN2IzNDNlXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_SX300.jpg"
+// }
