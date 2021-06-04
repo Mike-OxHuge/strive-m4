@@ -7,7 +7,7 @@ import "../assets/navbar.css";
 const NavBar = () => {
   return (
     <>
-      <Navbar expand="lg" id="navbar" className=''>
+      <Navbar expand="lg" id="navbar" className='fixed-top'>
         <Container fluid>
           <Navbar.Brand href="#home">
             <img src={logo} alt="logo" id="navbar1"  className='logo'/>
@@ -26,21 +26,22 @@ const NavBar = () => {
               <BsBellFill/>
               <Dropdown >
                 <Dropdown.Toggle
-                  id="dropdown-button-dark-example1"
-                  variant="secondary"
+                    menuAlign="right"
+                    title="Dropdown right"
+                    id="dropdown-menu-align-right"
                   className='dropdown'
                 >
                   <img src={icon} alt="img" className='icon'/>
                 </Dropdown.Toggle>
 
                 <Dropdown.Menu variant="" className='smallMenu'>
-                  <Dropdown.Item href="#" active>
+                  <Dropdown.Item href="#"  className='smallMenu'>
                     Add User
                   </Dropdown.Item>
-                  <Dropdown.Item href="#">Kids</Dropdown.Item>
+                  <Dropdown.Item href="#" className='smallMenu'>Kids</Dropdown.Item>
 
                   <Dropdown.Divider />
-                  <Dropdown.Item href="#">Log out</Dropdown.Item>
+                  <Dropdown.Item href="#" className='smallMenu'>Log out</Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>
             </div>
