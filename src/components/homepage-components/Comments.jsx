@@ -6,6 +6,7 @@ class Comments extends Component {
   state = {
     comments: [],
     apiKey: "",
+    isLoading: true,
   };
   componentDidMount = async () => {
     let username = "mikelitoris34@icloud.com";
@@ -32,14 +33,15 @@ class Comments extends Component {
     let comments = await response.json();
     this.setState({
       comments: comments,
+      isLoading: false,
     });
   };
   render() {
     return (
       <>
         <br />
-        {this.state.comments.length === 0 ? (
-          <span>No comments to display</span>
+        {this.state.comments.length === 0 && this.state.isLoading === true ? (
+          <span>Comments are loading...</span>
         ) : (
           this.state.comments.map((comment) => (
             <div key={comment._id}>

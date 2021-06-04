@@ -7,20 +7,31 @@ class EachMovie extends Component {
   };
   render() {
     return (
-      <Card style={{ width: "auto" }}>
+      <Card
+        style={{
+          width: "auto",
+          transform: this.state.selected ? "scale(0.8)" : "none",
+        }}
+        className="my-3 mx-2"
+      >
         <Card.Img
           variant="top"
           src={this.props.movie.Poster}
           onClick={() => this.setState({ selected: !this.state.selected })}
-          style={{ transform: this.state.selected ? "scale(0.8)" : "none" }}
+          style={{ maxWidth: "100%", maxHeight: "50%" }}
+          className="img-fluid"
         />
         <Card.Body>
           <Card.Title>{this.props.movie.Title}</Card.Title>
           <Card.Text>{this.props.movie.Year}</Card.Text>
-        </Card.Body>
-        <Card.Footer>
           {this.state.selected && <Comments id={this.props.movie.imdbID} />}
-        </Card.Footer>
+          {!this.state.selected && (
+            <span className="mt-5">Click the poster to see comments</span>
+          )}
+        </Card.Body>
+        {/* <Card.Footer>
+          
+        </Card.Footer> */}
       </Card>
     );
   }
