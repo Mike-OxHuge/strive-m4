@@ -6,6 +6,18 @@ class SearchBar extends Component {
     movies: [],
   };
 
+  componentDidUpdate = async () => {
+    console.log("Fetching data...");
+    let response = await fetch(
+      `https://www.omdbapi.com/?apikey=2bc5c486&s=${this.state.searchQuery}`
+    );
+    let movies = await response.json();
+    console.log(
+      `The search result for a query of ${this.state.searchQuery} are:`
+    );
+    console.log(movies.Search);
+  };
+
   render() {
     return (
       <div>

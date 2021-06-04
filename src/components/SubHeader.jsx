@@ -23,7 +23,7 @@ class SubHeader extends Component {
     );
     let movies = await response.json();
     console.log(
-      `The search result for a query of ${this.state.CurrentGenre} are:`
+      `Selected genre is: ${this.state.CurrentGenre} and the array of movies is down below:`
     );
     console.log(movies.Search);
   };
