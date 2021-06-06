@@ -1,5 +1,5 @@
 import { Component } from "react";
-import {Card, Container,Row, Col} from 'react-bootstrap'
+import {Card, Container, Row, Col} from 'react-bootstrap'
 
 class Carousel extends Component {
   state = {
@@ -18,22 +18,21 @@ class Carousel extends Component {
     return (
       <>
         <h1>{this.props.title}</h1>
-        <Container className='d-flex'>
+        <Container fluid>
           <Row>
-            {this.state.movies.map((movie) => (
-                    <Card style={{ width: "18rem" }}>
-                      <Card.Img variant="top" src={movie.Poster} />
-                      <Card.Body>
-                        <Card.Title>{movie.Title}</Card.Title>
-                        <Card.Text>
-                          {movie.Year}
-                        </Card.Text>
-                      </Card.Body>
-                    </Card>
-              // <div key={movie.imdbID}>
-              //   <span>{movie.Title}</span>
-              // </div>
-            ))}
+              {this.state.movies.map((movie) => (
+                  <Col className='col-sm-6 col-md-3 col-lg-2 m-2'>
+                      <Card style={{ width: "18rem" }}>
+                        <Card.Img variant="top" src={movie.Poster} />
+                        <Card.Body>
+                          <Card.Title>{movie.Title}</Card.Title>
+                          <Card.Text>
+                            {movie.Year}
+                          </Card.Text>
+                        </Card.Body>
+                      </Card>
+                  </Col>
+              ))}
           </Row>
         </Container>
       </>
