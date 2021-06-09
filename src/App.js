@@ -13,7 +13,12 @@ function App() {
         <Layout>
           <Route exact path="/" component={Homepage} />
           <Route exact path="/:movieID/" component={MovieDetails} />
-          <Route exact path="/browse/:genre" component={BrowseResult} />
+          {/* <Route exact path="/browse/:genre" component={BrowseResult} /> */}
+          <Route
+            exact
+            path="/browse/:genre"
+            render={(routerProps) => <BrowseResult {...routerProps} />}
+          />
         </Layout>
       </Router>
     </div>
