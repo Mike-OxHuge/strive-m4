@@ -29,9 +29,9 @@ const SubHeader = ({ history }) => {
     request();
   }, [genre]);
 
-  const redirect = function (e) {
-    console.log(history);
-    history.push(`/browse/${genre}`);
+  const redirect = async function (e) {
+    await setGenre(e.target.innerText);
+    history.push(`/browse/${e.target.innerText}`);
   };
 
   return (
