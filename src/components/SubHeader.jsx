@@ -48,7 +48,7 @@ const SubHeader = ({ history }) => {
               variant="dark"
             >
               {genres.map((item) => (
-                <div key={item.imdbID}>
+                <div key={item}>
                   <span className="dropdown-item" onClick={(e) => redirect(e)}>
                     {item}
                   </span>
