@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Homepage from "./components/Home";
 import MovieDetails from "./components/MovieDetails";
 import BrowseResult from "./components/BrowseResult";
+import Registration from "./components/Registration";
 
 function App() {
   return (
@@ -12,13 +13,14 @@ function App() {
       <Router>
         <Layout>
           <Route exact path="/" component={Homepage} />
-          <Route exact path="/:movieID/" component={MovieDetails} />
+          <Route exact path="/movies/:movieID/" component={MovieDetails} />
           {/* <Route exact path="/browse/:genre" component={BrowseResult} /> */}
           <Route
             exact
             path="/browse/:genre"
             render={(routerProps) => <BrowseResult {...routerProps} />}
           />
+          <Route exact path="/registration" component={Registration} />
         </Layout>
       </Router>
     </div>

@@ -21,7 +21,7 @@ const EachMovie = ({ movie }) => {
         style={{ maxWidth: "100%", maxHeight: "50%" }}
         className="img-fluid"
       />
-      <Link to={`/${movie.imdbID}`}>
+      <Link to={`/movies/${movie.imdbID}`}>
         <Card.Body>
           <Card.Title>{movie.Title}</Card.Title>
           <Card.Text>{movie.Year}</Card.Text>

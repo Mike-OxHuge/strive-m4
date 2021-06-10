@@ -18,7 +18,7 @@ const BrowseResult = ({ match }) => {
       {movies.length === 0 ? (
         <Spinner animation="border" role="status" />
       ) : (
-        movies.map((movie) => <h1>{movie.Title}</h1>)
+        movies.map((movie) => <h1 key={movie.imdbID}>{movie.Title}</h1>)
       )}
     </>
   );

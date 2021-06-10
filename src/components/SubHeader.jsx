@@ -46,15 +46,21 @@ const SubHeader = ({ history }) => {
               variant="dark"
             >
               {genres.map((item) => (
-                <span className="dropdown-item" onClick={(e) => redirect(e)}>
-                  {item}
-                </span>
+                <div key={item.imdbID}>
+                  <span className="dropdown-item" onClick={(e) => redirect(e)}>
+                    {item}
+                  </span>
+                </div>
               ))}
             </DropdownButton>
           </Col>
           <Col className="col-4">
             <BsGrid />
             <BsTextLeft />
+            <Link to="/registration">
+              {" "}
+              <span>register</span>
+            </Link>
           </Col>
         </Row>
       </Container>
