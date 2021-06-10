@@ -6,7 +6,9 @@ import { Link, withRouter } from "react-router-dom";
 
 const SubHeader = ({ history }) => {
   const [genre, setGenre] = useState("Genre");
+  // eslint-disable-next-line no-unused-vars
   const [searchResult, setSearchResult] = useState([]); // i could nest a child inside here and render these movies
+  // eslint-disable-next-line no-unused-vars
   const [genres, setGenres] = useState([
     "Action",
     "Drama",
