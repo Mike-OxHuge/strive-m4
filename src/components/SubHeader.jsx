@@ -1,5 +1,5 @@
 // import { Component } from "react";
-import { Container, Row, Col, Button, DropdownButton } from "react-bootstrap";
+import { Container, Row, Col, DropdownButton } from "react-bootstrap";
 import { BsGrid, BsTextLeft } from "react-icons/bs";
 import { useState, useEffect } from "react";
 import { Link, withRouter } from "react-router-dom";
@@ -55,13 +55,6 @@ const SubHeader = ({ history }) => {
           <Col className="col-4">
             <BsGrid />
             <BsTextLeft />
-            {genre !== "Genre" ? (
-              <Button variant="info">
-                <Link to={`/browse/${genre}`}>Render {genre} movies! </Link>
-              </Button>
-            ) : (
-              <div></div>
-            )}
           </Col>
         </Row>
       </Container>
