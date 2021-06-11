@@ -1,13 +1,16 @@
-import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-const ButtonLink = ({ text }) => {
+import { Link, withRouter } from "react-router-dom";
+const ButtonLink = ({ text, location }) => {
   return (
     <>
-      <Link to={`home/${text.toLowerCase()}`}>
-        <span>{text}</span>
+      <Link to={`/home/${text.toLowerCase()}`}>
+        {location.pathname.includes(text.toLowerCase()) ? (
+          <span style={{ color: "red" }}>{text}</span>
+        ) : (
+          <span>{text}</span>
+        )}
       </Link>
     </>
   );
 };
 
-export default ButtonLink;
+export default withRouter(ButtonLink);

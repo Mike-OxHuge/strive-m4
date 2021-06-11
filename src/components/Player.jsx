@@ -1,7 +1,9 @@
 const Player = () => {
   return (
     <>
-      <h1>Player</h1>
+      <div style={{ position: "absolute", top: "80vh" }}>
+        <h1>Player</h1>
+      </div>
     </>
   );
 };

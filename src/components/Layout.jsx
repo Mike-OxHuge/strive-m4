@@ -1,18 +1,21 @@
 import Player from "./Player";
 import Sidebar from "./Sidebar";
-import Logo from "./Logo";
+import { Container, Row, Col } from "react-bootstrap";
 const Layout = ({ children }) => {
   return (
-    <>
-      <Logo />
-      <aside>
-        <Sidebar />
-      </aside>
-      <main>{children}</main>
-      <footer>
-        <Player />
-      </footer>
-    </>
+    <Row style={{ maxWidth: "100%", maxHeight: "100vh" }}>
+      <Col xs={2}>
+        <aside>
+          <Sidebar />
+        </aside>
+      </Col>
+      <Col xs={10}>
+        <Container>{children}</Container>
+        <footer>
+          <Player />
+        </footer>
+      </Col>
+    </Row>
   );
 };
 

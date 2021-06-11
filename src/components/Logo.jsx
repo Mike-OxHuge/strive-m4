@@ -1,7 +1,11 @@
+import logo from "../assets/logo.png";
+import { Link } from "react-router-dom";
 const Logo = () => {
   return (
     <>
-      <img src="../assets/logo.png" alt="" />
+      <a href="/home/trending">
+        <img src={logo} style={{ maxWidth: "100%" }} alt="logo" />
+      </a>
     </>
   );
 };
